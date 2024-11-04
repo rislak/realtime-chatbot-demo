@@ -69,7 +69,7 @@ For example you could use:
 
 ## Your Approach
 
-Please describe your approach here.
+### Please describe your approach here.
 
 First, I reduced the token limit for responses to 50, which restricts the chatbot’s response length and allows it to produce short, focused answers much faster. Since the assistant’s responses are designed to be concise, this smaller token limit helps streamline response generation without sacrificing clarity or relevance, giving the interaction a more immediate feel.
 
@@ -82,6 +82,6 @@ To push latency reduction even further, I experimented with asynchronous process
 Overall, these optimizations—reducing token size, enabling streaming, optimizing TTS playback, and exploring async processing—combine to make the bot feel faster and more interactive while keeping a natural flow. This project was fascinating to work on, and I'm really excited to hear back from Nooks as I’d love the chance to contribute to the mission at Nooks!
 
 
-Please also include a recorded video showing how fast your chatbot implementation is to respond.
+### Please also include a recorded video showing how fast your chatbot implementation is to respond.
 Link to video (uses google drive sharing): https://drive.google.com/file/d/1CjFyTjYBg-NGZb5qKsBF_pCGjPOSEfkx/view?usp=sharing.
 
