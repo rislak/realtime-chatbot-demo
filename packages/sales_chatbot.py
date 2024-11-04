@@ -46,14 +46,22 @@ class SalesChatbot:
     def generate_response(self, user_input):
         self.conversation_history.append({"role": "user", "content": user_input})
 
+        # Reduced max_token size here to 50 because it reduces latency according to OpenAI API docs.
         response = client.chat.completions.create(
             model="gpt-4",
-            messages=self.conversation_history
+            messages=self.conversation_history,
+            max_tokens=50,
+            stream=True
         )
 
-        ai_response = response.choices[0].message.content
-        self.conversation_history.append({"role": "assistant", "content": ai_response})
+        # I will now use chunks for processing, hence I process each streamed chunk as it arrives.
+        ai_response = ""
+        for chunk in response:
+            content = chunk.choices[0].delta.content if hasattr(chunk.choices[0].delta, "content") else None
+            if content: 
+                ai_response += content  
 
+        self.conversation_history.append({"role": "assistant", "content": ai_response})
         return ai_response
 
     def get_conversation_history(self):

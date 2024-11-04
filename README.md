@@ -70,5 +70,17 @@ For example you could use:
 ## Your Approach
 
 Please describe your approach here.
+First, I reduced the token limit for responses to 50, which restricts the chatbot’s response length and allows it to produce short, focused answers much faster. Since the assistant’s responses are designed to be concise, this smaller token limit helps streamline response generation without sacrificing clarity or relevance, giving the interaction a more immediate feel.
+
+Building on this, I enabled streaming for OpenAI's GPT-4 model. This means the bot now processes each chunk of text as it arrives, rather than waiting for the entire response to be generated. The moment the bot receives the first few words, it can start preparing to speak, cutting down the wait time before initiating text-to-speech (TTS). Streaming helps maintain a smooth conversational flow and gives the impression of a more responsive assistant.
+
+For TTS, I optimized the setup by switching to ElevenLabs' streaming API, which allows audio to be generated in real-time and start playing almost immediately. Additionally, I switched to the “eleven_turbo_v2_5” model, optimized for lower latency. This setup minimizes the lag between the bot generating a response and the user hearing it, creating a more natural pace that feels more like a live interaction.
+
+To push latency reduction even further, I experimented with asynchronous processing using Python’s asyncio. The goal here was to let the bot continue transcribing while speaking, but I ran into some challenges with managing transcription sessions and handling potential overlaps. I could see potential for further latency reduction here, but with midterms and other assignments, I ran out of time to fully explore this route, as this project was intended for a three-hour timeframe.
+
+Overall, these optimizations—reducing token size, enabling streaming, optimizing TTS playback, and exploring async processing—combine to make the bot feel faster and more interactive while keeping a natural flow. This project was fascinating to work on, and I'm really excited to hear back from Nooks as I’d love the chance to contribute to the mission at Nooks!
+
+
 Please also include a recorded video showing how fast your chatbot implementation is to respond.
+Link to video (uses google drive sharing): https://drive.google.com/file/d/1CjFyTjYBg-NGZb5qKsBF_pCGjPOSEfkx/view?usp=sharing.
 
