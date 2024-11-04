@@ -70,6 +70,7 @@ For example you could use:
 ## Your Approach
 
 Please describe your approach here.
+
 First, I reduced the token limit for responses to 50, which restricts the chatbot’s response length and allows it to produce short, focused answers much faster. Since the assistant’s responses are designed to be concise, this smaller token limit helps streamline response generation without sacrificing clarity or relevance, giving the interaction a more immediate feel.
 
 Building on this, I enabled streaming for OpenAI's GPT-4 model. This means the bot now processes each chunk of text as it arrives, rather than waiting for the entire response to be generated. The moment the bot receives the first few words, it can start preparing to speak, cutting down the wait time before initiating text-to-speech (TTS). Streaming helps maintain a smooth conversational flow and gives the impression of a more responsive assistant.
